@@ -6,10 +6,10 @@ import {
 } from './components/Icons';
 import ProfileAvatar from './components/ProfileImage';
 import LinkButton from './components/LinkButton';
-import ZuriInternshipLogo from './assets/images/Zuri.Internship.png';
-import I4GLogo from './assets/images/I4G.png';
+import ZuriInternshipLogo from '../assets/images/Zuri.Internship.png';
+import I4GLogo from '../assets/images/I4G.png';
 
-function App() {
+function Home() {
   return (
     <>
       <main className="max-w-6xl mx-auto pt-16">
@@ -41,34 +41,46 @@ function App() {
             label="Twitter Link"
             id="btn"
             link="https://twitter.com/nomanejaz132"
+            target={true}
           />
           <LinkButton
             label="Zuri Team"
             id="btn__zuri"
             link="https://training.zuri.team/"
+            target={true}
           />
           <LinkButton
             label="Zuri Books"
             id="books"
             link="https://books.zuri.team/"
             title="Books about design and programming"
+            target={true}
           />
           <LinkButton
             label="Python Books"
             id="book__python"
             link="https://books.zuri.team/python-for-beginners?ref_id=nomanejaz132"
+            target={true}
           />
           <LinkButton
             label="Background Check for Coders"
             id="pitch"
             link="https://background.zuri.team/"
             title="Backgrounds that will help you while designing and coding."
+            target={true}
           />
           <LinkButton
             label="Design Books"
             id="book__design"
             link="https://books.zuri.team/design-rules"
             title="Books offered by Zuri Team"
+            target={true}
+          />
+          <LinkButton
+            label="Contact Me"
+            id="contact"
+            link="/contact"
+            target={false}
           />
         </section>
         <section className="mt-6 py-6 flex items-center justify-center gap-6 ">
@@ -93,4 +105,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

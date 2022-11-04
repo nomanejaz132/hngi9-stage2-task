@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileImg from '../assets/images/profile__img.jpg';
+import ProfileImg from '../../assets/images/profile__img.jpg';
 import { CameraIcon } from './Icons';
 
 const ProfileImage = () => {
