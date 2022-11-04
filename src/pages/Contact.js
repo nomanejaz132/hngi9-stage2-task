@@ -12,38 +12,8 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const [checkbox, setCheckbox] = useState(false);
 
-  const [firstNError, setFirstNError] = useState('');
-  const [lastNError, setLastNError] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [messageError, setMessageError] = useState('');
-
-  const validate = () => {
-    const errors = {};
-    if (firstName === '') errors.firstName = 'Please enter a first name';
-
-    if (lastName === '') errors.lastName = 'Please enter a last name';
-
-    if (email === '') errors.email = 'Please enter a valid email';
-
-    if (message === '') errors.message = 'Please write a message here';
-
-    return Object.keys(errors).length === 0 ? null : errors;
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    const errors = validate();
-    if (errors) {
-      setFirstNError(errors.firstName);
-      setLastNError(errors.lastName);
-      setEmailError(errors.email);
-      setMessageError(errors.message);
-    } else {
-      setFirstNError('');
-      setLastNError('');
-      setEmailError('');
-      setMessageError('');
-    }
   };
 
   return (
@@ -68,7 +38,6 @@ const Contact = () => {
                 placeholder="Enter your first name"
                 value={firstName}
                 setValue={setFirstName}
-                error={firstNError}
               />
               <Input
                 htmlFor="last_name"
@@ -78,7 +47,6 @@ const Contact = () => {
                 placeholder="Enter your last name"
                 value={lastName}
                 setValue={setLastName}
-                error={lastNError}
               />
             </div>
             <div className="mt-6">
@@ -90,7 +58,6 @@ const Contact = () => {
                 placeholder="yourname@email.com"
                 value={email}
                 setValue={setEmail}
-                error={emailError}
               />
             </div>
             <div className="mt-6">
@@ -101,7 +68,6 @@ const Contact = () => {
                 placeholder="Send me a message and I'll reply you as soon as possible..."
                 value={message}
                 setValue={setMessage}
-                error={messageError}
               />
             </div>
             <div className="mt-[26px]">
