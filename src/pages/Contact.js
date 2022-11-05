@@ -19,7 +19,7 @@ const Contact = () => {
   const [checkboxError, setCheckboxError] = useState("");
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
   };
 
   const formValidation = () => {

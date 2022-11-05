@@ -1,7 +1,6 @@
 import React from "react";
 
 const CheckBox = ({ checkbox, setCheckbox, error }) => {
-  console.log(error);
   const name = "Noman Ejaz";
 
   return (
@@ -38,14 +37,14 @@ const CheckBox = ({ checkbox, setCheckbox, error }) => {
           </svg>
         </div>
         <label
-          for="checkbox"
+          htmlFor="checkbox"
           className="text-base text-[#475467] font-inter font-normal select-none"
         >
           You agree to providing your data to {name} who may contact you.
         </label>
       </div>
       {error && (
-        <p class="text-sm text-[#F83F23] font-inter font-normal">{error}</p>
+        <p className="text-sm text-[#F83F23] font-inter font-normal">{error}</p>
       )}
     </div>
   );
