@@ -27,7 +27,7 @@ const Input = ({
         onChange={(e) => setValue(e.target.value)}
         className={`bg-white border  ${
           error ? "border-[#F83F23]" : "border-[#D0D5DD]"
-        } focus:outline-0 focus:border-[#84CAFF] py-[10px] px-[14px] rounded-lg drop-shadow-[0_1px_2px_rgba(16,24,40,0.05)] text-base text-[#667085] font-inter font-normal`}
+        } focus:outline-0 focus:border-[#84CAFF] focus:shadow-[0_0_0_0.25rem_rgb(13,110,253,0.25)] py-[10px] px-[14px] rounded-lg drop-shadow-[0_1px_2px_rgba(16,24,40,0.05)] text-base text-[#667085] font-inter font-normal`}
         placeholder={placeholder}
       />
       {error && (
