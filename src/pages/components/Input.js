@@ -22,7 +22,7 @@ const Input = ({
       <input
         type={type}
         id={id}
-        // required="required"
+        required="required"
         value={value}
         onChange={(e) => setValue(e.target.value)}
         className={`bg-white border  ${

@@ -22,6 +22,7 @@ const TextArea = ({
         id={id}
         placeholder={placeholder}
         value={value}
+        required="required"
         onChange={(e) => setValue(e.target.value)}
         className={`max-h-[132px] bg-white border ${
           error ? "border-[#F83F23]" : "border-[#D0D5DD]"
