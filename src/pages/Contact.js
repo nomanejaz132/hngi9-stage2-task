@@ -1,19 +1,53 @@
-import React, { useState } from 'react';
-import Button from './components/Button';
-import CheckBox from './components/CheckBox';
-import Footer from './components/Footer';
-import Input from './components/Input';
-import TextArea from './components/TextArea';
+import React, { useState } from "react";
+import Button from "./components/Button";
+import CheckBox from "./components/CheckBox";
+import Footer from "./components/Footer";
+import Input from "./components/Input";
+import TextArea from "./components/TextArea";
 
 const Contact = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [checkbox, setCheckbox] = useState(false);
 
+  const [fNameError, setFNameError] = useState("");
+  const [lNameError, setlNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [messageError, setMessageError] = useState("");
+  const [checkboxError, setCheckboxError] = useState("");
+
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
+  };
+
+  const formValidation = () => {
+    if (firstName.length === 0) {
+      setFNameError("Please enter your First Name");
+    } else {
+      setFNameError("");
+    }
+    if (lastName.length === 0) {
+      setlNameError("Please enter your Last Name");
+    } else {
+      setlNameError("");
+    }
+    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+      setEmailError("Please enter a valid email address");
+    } else {
+      setEmailError("");
+    }
+    if (message.length === 0) {
+      setMessageError("Please enter a message");
+    } else {
+      setMessageError("");
+    }
+    if (checkbox === false) {
+      setCheckboxError("Please select this to provide your data ");
+    } else {
+      setCheckboxError("");
+    }
   };
 
   return (
@@ -36,6 +70,7 @@ const Contact = () => {
                 type="text"
                 id="first_name"
                 placeholder="Enter your first name"
+                error={fNameError}
                 value={firstName}
                 setValue={setFirstName}
               />
@@ -45,6 +80,7 @@ const Contact = () => {
                 type="text"
                 id="last_name"
                 placeholder="Enter your last name"
+                error={lNameError}
                 value={lastName}
                 setValue={setLastName}
               />
@@ -56,6 +92,7 @@ const Contact = () => {
                 type="email"
                 id="email"
                 placeholder="yourname@email.com"
+                error={emailError}
                 value={email}
                 setValue={setEmail}
               />
@@ -66,15 +103,20 @@ const Contact = () => {
                 label="Message"
                 id="message"
                 placeholder="Send me a message and I'll reply you as soon as possible..."
+                error={messageError}
                 value={message}
                 setValue={setMessage}
               />
             </div>
             <div className="mt-[26px]">
-              <CheckBox checkbox={checkbox} setCheckbox={setCheckbox} />
+              <CheckBox
+                checkbox={checkbox}
+                setCheckbox={setCheckbox}
+                error={checkboxError}
+              />
             </div>
             <div className="mt-8">
-              <Button />
+              <Button onClick={formValidation} />
             </div>
           </form>
         </div>
