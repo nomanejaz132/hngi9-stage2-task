@@ -24,7 +24,9 @@ const Input = ({
         // required="required"
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        class="bg-white border border-[#D0D5DD] focus:outline-0 focus:border-[#84CAFF] py-[10px] px-[14px] rounded-lg drop-shadow-[0_1px_2px_rgba(16,24,40,0.05)] text-base text-[#667085] font-inter font-normal"
+        class={`bg-white border  ${
+          error ? "border-[#F83F23]" : "border-[#D0D5DD]"
+        } focus:outline-0 focus:border-[#84CAFF] py-[10px] px-[14px] rounded-lg drop-shadow-[0_1px_2px_rgba(16,24,40,0.05)] text-base text-[#667085] font-inter font-normal`}
         placeholder={placeholder}
       />
       {error && (
